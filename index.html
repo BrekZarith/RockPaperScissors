@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper Scissors</title>
+    </head>
+    <body>
+        <script>
+    
+        function playRound(playerSelection, computerSelection){
+
+            let playerInput = prompt("Rock, Paper or Scissors?");
+            playerSelection = playerInput.toLowerCase();
+            //console.log("You picked " + playerSelection);
+
+            number = Math.floor(Math.random() * 3)
+            function computerPlay(number){
+                if (number == 0){
+                return "rock"
+                }
+                else if (number == 1){
+                return "paper"
+                }
+                else {
+                return "scissors"
+                }
+            } 
+            
+            computerPlay(number);
+            computerSelection = computerPlay(number);
+            //console.log("the computer picked " + computerSelection)
+
+            if  (
+                (playerSelection == "rock" && computerSelection == "scissors") ||
+                (playerSelection == "paper" && computerSelection == "rock") ||
+                (playerSelection == "scissors" && computerSelection == "paper")
+                )
+                {
+                return "You win this round!"
+                }
+
+            else if (playerSelection == computerSelection)
+                {
+                return "You are tied with your opponent..."
+                }
+            else {return "You loose this round!" 
+            
+            
+           }
+        }
+
+        function game(result){
+            //Round 1
+            result1 = playRound()
+            console.log(result1)
+            let pointFirstRound
+                if (result1 == "You win this round!"){
+                    pointFirstRound = 1
+                    }
+                else if (result1 == "You are tied with your opponent..."){
+                    pointFirstRound = 0
+                    }
+                else {
+                    pointFirstRound = 0
+                }
+            
+            //Round 2
+            result2 = playRound()
+            console.log(result2)
+            let pointSecondRound
+                if (result2 == "You win this round!"){
+                    pointSecondRound = 1
+                    }
+                else if (result2 == "You are tied with your opponent..."){
+                    pointSecondRound = 0
+                    }
+                else {
+                    pointSecondRound = 0
+                }
+            
+             //Round 3
+             result3 = playRound()
+            console.log(result3)
+            let pointThirdRound
+                if (result3 == "You win this round!"){
+                    pointThirdRound = 1
+                    }
+                else if (result3 == "You are tied with your opponent..."){
+                    pointThirdRound = 0
+                    }
+                else {
+                    pointThirdRound = 0
+                }
+
+             
+            //Round 4
+            result4 = playRound()
+            console.log(result4)
+            let pointFourthRound
+                if (result4 == "You win this round!"){
+                    pointFourthRound = 1
+                    }
+                else if (result4 == "You are tied with your opponent..."){
+                    pointFourthRound = 0
+                    }
+                else {
+                    pointFourthRound = 0
+                }
+
+             //Round 5
+             result5 = playRound()
+            console.log(result5)
+            let pointFifthRound
+                if (result5 == "You win this round!"){
+                    pointFifthRound = 1
+                    }
+                else if (result5 == "You are tied with your opponent..."){
+                    pointFifthRound = 0
+                    }
+                else {
+                    pointFifthRound = 0
+                }
+
+            // Score Calculation   
+            let score = pointFirstRound + pointSecondRound + pointThirdRound + pointFourthRound + pointFifthRound
+            console.log("Your score is " + score) 
+
+            //Display Victory message
+            if (score>=3){
+                console.log("YOU WON THE GAME")
+            }
+            else {
+                console.log("YOU LOST! BOO")
+            }
+            
+        }
+           
+        game(); 
+        </script>
+    </body>
+</html> 
